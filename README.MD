@@ -1,21 +1,35 @@
-Static Website Example
-----------------------
+# Website Example
 
-To be used with Cloud Academy labs.
+A fully responsive site template designed by [HTML5 UP](https://html5up.net).
 
+## Installation
 
-License
-----------------------
+This is a static website. You can simply open the `index.html` file in your browser, or host it on any static web server.
 
-This static website is based on the Dimension template by [HTML5 UP](https://html5up.net/)
+For local development, you can use a simple Python HTTP server:
 
-Creative Commons License
-All of the site templates I create for [HTML5 UP](https://html5up.net/) are licensed under the Creative Commons Attribution 3.0 License, which means you can:
- - Use them for personal stuff
- - Use them for commercial stuff
- - Change them however you like
+```bash
+python -m http.server
+```
 
+Or a similar tool.
 
-... all for free, yo. In exchange, just give HTML5 UP credit for the design and tell your friends about it :)
+## Deployment
 
-More info [here](https://html5up.net/license).
+Before deployment, you should replace the `DEPLOYREF` placeholder in `index.html`. This is used to track the version of the deployed code.
+
+In `index.html`, find the following line:
+
+```html
+<meta name="deployref" content="DEPLOYREF">
+```
+
+Replace `DEPLOYREF` with the actual deployment reference, for example, a git commit hash.
+
+## Testing
+
+The project includes a simple test script. To run the tests, execute the following command:
+
+```bash
+./test.sh
+```
