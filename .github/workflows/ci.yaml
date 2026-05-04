@@ -34,17 +34,11 @@ jobs:
 
       - name: Run tests
         run: |
-          set +e
-          python -m pytest -v --browser chromium tests | tee test_result
-          code=${PIPESTATUS[0]}
-          echo "" >> test_result
-          echo "===== app.log =====" >> test_result
-          cat app.log >> test_result
-          exit $code
+          python -m pytest -v --browser chromium tests --junitxml=test_result.xml
 
       - name: Upload test result
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test_result
-          path: test_result
+          path: test_result.xml
