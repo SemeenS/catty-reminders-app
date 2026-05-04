@@ -37,6 +37,7 @@ jobs:
       - name: Deploy files and restart app
         run: |
           set -euxo pipefail
+
           rsync -az --delete \
             --exclude ".git" \
             --exclude ".github" \
@@ -58,4 +59,4 @@ jobs:
           sudo -n systemctl restart catty-app
           sleep 3
           sudo -n systemctl is-active catty-app
-            REMOTE
+          REMOTE
